@@ -1,0 +1,195 @@
+:root {
+    --primary-color: #2E7D32;
+    --secondary-color: #81C784;
+    --accent-color: #F9FBE7;
+    --gradient-primary: linear-gradient(135deg, #2E7D32 0%, #81C784 100%);
+    --shadow-elevation-1: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-elevation-2: 0 10px 20px rgba(0, 0, 0, 0.12);
+    --border-radius-soft: 12px;
+    --border-radius-round: 50%;
+}
+
+.diagnostic-container {
+    background: var(--gradient-primary);
+    border-radius: var(--border-radius-soft);
+    padding: 40px;
+    box-shadow: var(--shadow-elevation-2);
+    color: white;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.diagnostic-container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: rotate(-45deg);
+    z-index: -3;
+}
+
+.symptom-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: var(--border-radius-soft);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow-elevation-1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    color: #1a5f7a;
+}
+.visual span{
+    display: block;
+}
+
+.symptom-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-elevation-2);
+}
+
+.symptom-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.form-select:nth-child(2) {
+    width: 100%;
+    max-width: 400px;
+    border-radius: var(--border-radius-soft);
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.form-select:nth-child(2):focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(26, 95, 122, 0.2);
+}
+
+.progress-indicator {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.progress-step {
+    width: 45px;
+    height: 45px;
+    border-radius: var(--border-radius-round);
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    position: relative;
+    transition: all 0.3s ease;
+    color: #6c757d;
+    font-weight: bold;
+}
+
+.progress-step.active {
+    background: var(--gradient-primary);
+    color: white;
+    transform: scale(1.1);
+}
+
+.progress-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background-color: #e9ecef;
+    z-index: 1;
+    transition: background-color 0.3s ease;
+}
+
+.custom-file-upload {
+    border: 3px dashed var(--secondary-color);
+    border-radius: var(--border-radius-soft);
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.custom-file-upload:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(77, 182, 172, 0.05);
+}
+
+.result-card {
+    border-left: 6px solid var(--primary-color);
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 0 var(--border-radius-soft) var(--border-radius-soft) 0;
+    transition: transform 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateX(10px);
+}
+
+footer {
+    background: var(--gradient-primary);
+    color: white;
+    margin-top: 60px;
+    padding: 40px 0;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+}
+
+.btns {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.btns button {
+    flex: 1;
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius-soft);
+    background: var(--gradient-primary);
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btns button:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-elevation-1);
+}
+
+/* Select2 Bootstrap Theme */
+.select2-container--bootstrap {
+    border-radius: var(--border-radius-soft);
+}
+
+.select2-container--bootstrap .select2-selection {
+    border: 2px solid var(--secondary-color);
+    transition: all 0.3s ease;
+}
+
+.select2-container--bootstrap .select2-results__option--highlighted {
+    background: var(--gradient-primary);
+}
+
+.select2-container--bootstrap.select2-container--focus .select2-selection {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}

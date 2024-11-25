@@ -1,0 +1,36 @@
+.dashboard-card {
+    transition: transform 0.3s ease;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+}
+
+.diagnosis-history {
+    margin-top: 20px;
+}
+
+.diagnosis-item {
+    padding: 15px;
+    border-left: 4px solid var(--primary-color);
+    background: #f8f9fa;
+    margin-bottom: 15px;
+    border-radius: 0 10px 10px 0;
+    transition: transform 0.3s ease;
+}
+
+.diagnosis-item:hover {
+    transform: translateX(10px);
+}
+
+.diagnosis-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.diagnosis-item small {
+    color: #6c757d;
+}
