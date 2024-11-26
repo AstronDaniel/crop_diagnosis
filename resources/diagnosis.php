@@ -62,50 +62,34 @@ if (!isset($_SESSION['user_id'])) {
                             </select>
                         </div>
                     </div>
+                    <div class="btns mt-4">
+                        <button type="button" class="btn-next btn btn-success">Next</button>
+                    </div>
                 </div>
 
-                <!-- Step 2: Symptom Selection -->
-                <div class="symptom-card mt-4 step-2">
-                    <h3 class="mb-4">Select Symptoms</h3>
-                    <div class="row g-3">
-                        <div class="col-12 visual">
-                            <label class="form-label">Visual Symptoms</label>
-                            <select class="form-select symptoms-select" name="symptoms[]" multiple="multiple">
-                                <option value="yellowing">Yellowing of leaves</option>
-                                <option value="spots">Brown/Black spots</option>
-                                <option value="wilting">Wilting</option>
-                                <option value="stunted">Stunted growth</option>
-                                <option value="lesions">Lesions</option>
-                                <option value="mold">Visible mold</option>
+                <!-- Step 2: Symptoms -->
+                <div class="step-2" style="display: none;">
+                    <h3 class="mb-4">Symptoms & Details</h3>
+                    <div class="symptom-card">
+                        <div class="mb-4">
+                            <label class="form-label">Select Symptoms (1-5)</label>
+                            <select class="symptoms-select form-select" name="symptoms[]" multiple="multiple" required>
+                                <!-- Options will be populated dynamically -->
                             </select>
+                            <div class="invalid-feedback">Please select at least one symptom</div>
                         </div>
-
-                        <div class="col-12">
+                        <div class="mb-3">
                             <label class="form-label">Additional Details</label>
-                            <textarea class="form-control" name="additional_details" rows="3"
-                                placeholder="Describe any other symptoms or observations..."></textarea>
+                            <textarea name="additional_details" class="form-control" rows="4" 
+                                    placeholder="Describe any other observations or details about the condition..."></textarea>
                         </div>
-
-                        <div class="col-12">
-                           
+                        <div class="btns mt-4">
+                            <button type="button" class="btn-prev btn btn-secondary">Previous</button>
+                            <button type="submit" class="btn btn-primary diagnosis">Get Diagnosis</button>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Submit Button -->
-                <div class="text-center mt-4">
-                    <button type="submit" class="btn btn-primary btn-lg px-5 diagnosis" style="background-color: var(--primary-color); border-color: var(--primary-color);">Get Diagnosis</button>
-                </div>
-                <div class="btns">
-                    <div class="text-center mt-4">
-                        <button type="button" class="btn-prev btn btn-outline-primary btn-sm px-5">Previous</button>
-                    </div>
-                    <div class="text-center mt-4">
-                        <button type="button" class="btn-next btn btn-outline-success btn-sm px-5">Next</button>
                     </div>
                 </div>
             </form>
-
         </div>
 
         <!-- Results Section (initially hidden, shown after form submission) -->
@@ -125,8 +109,12 @@ if (!isset($_SESSION['user_id'])) {
                 </ul>
 
                 <div class="mt-4">
-                    <button class="btn btn-outline-primary me-2">Save Diagnosis</button>
-                    <button class="btn btn-outline-secondary">Print Report</button>
+                    <button type="button" class="btn btn-outline-primary me-2" onclick="saveDiagnosis(diagnosisId)">
+                        <i class="bi bi-download me-1"></i>Save Report
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary" onclick="printDiagnosis()">
+                        <i class="bi bi-printer me-1"></i>Print Report
+                    </button>
                 </div>
             </div>
         </div>

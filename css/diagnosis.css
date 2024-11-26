@@ -43,6 +43,7 @@
     overflow: hidden;
     color: #1a5f7a;
 }
+
 .visual span{
     display: block;
 }
@@ -192,4 +193,40 @@ footer {
 .select2-container--bootstrap.select2-container--focus .select2-selection {
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+.symptoms-select {
+    width: 100%;
+    min-height: 100px;
+}
+
+.symptom-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: var(--border-radius-soft);
+    padding: 25px;
+    margin-bottom: 20px;
+}
+
+.symptom-card textarea {
+    border: 2px solid var(--secondary-color);
+    border-radius: var(--border-radius-soft);
+    transition: all 0.3s ease;
+}
+
+.symptom-card textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.2);
+}
+
+.select2-container--bootstrap .select2-selection--multiple {
+    min-height: 100px;
+}
+
+.select2-container--bootstrap .select2-selection--multiple .select2-selection__choice {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
 }

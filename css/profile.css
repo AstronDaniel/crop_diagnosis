@@ -1,0 +1,132 @@
+.profile-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--space-lg);
+}
+
+.profile-header {
+    text-align: center;
+    position: relative;
+    padding-bottom: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.profile-cover {
+    height: 240px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 15px;
+    margin-bottom: 80px;
+}
+
+.profile-avatar {
+    width: 140px;
+    height: 140px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+}
+
+.profile-avatar i {
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.profile-section {
+    display: grid;
+    gap: var(--space-lg);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    border-radius: 15px;
+    padding: var(--space-xl);
+    margin-bottom: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.profile-section h3 {
+    margin-bottom: 20px;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.profile-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary-color);
+    border-radius: 3px;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-lg);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    transition: var(--transition-base);
+}
+
+.stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+/* Form Styles */
+.profile-form, .password-form {
+    display: grid;
+    gap: var(--space-md);
+    max-width: 800px;
+}
+
+.form-group {
+    display: grid;
+    gap: var(--space-xs);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-cover {
+        height: 180px;
+        margin-bottom: 60px;
+    }
+
+    .profile-avatar {
+        width: 100px;
+        height: 100px;
+        bottom: -50px;
+    }
+
+    .profile-avatar i {
+        font-size: 2.5rem;
+    }
+
+    .profile-section {
+        padding: var(--space-md);
+    }
+
+    .stats-container {
+        gap: var(--space-md);
+    }
+}

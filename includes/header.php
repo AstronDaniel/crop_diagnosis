@@ -33,6 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../resources/diagnosis.php">Diagnose</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../resources/dashboard.php">Dashboard</a>
+                    </li>
                    
                     <li class="nav-item">
                         <a class="nav-link" href="../resources/Login.php">Login</a>

@@ -1,15 +1,15 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "crop_disease_diagnostic_tool";
+$host = 'localhost';
+$username = 'root';
+$password = '';
+$database = 'crop_disease_diagnostic_tool';
 
-// Creating connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($host, $username, $password, $database);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-echo "<script>console.log('Connected successfully');</script>";
+
+$conn->set_charset("utf8mb4");
+// Remove the console.log script
 ?>
