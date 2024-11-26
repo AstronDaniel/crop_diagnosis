@@ -84,12 +84,12 @@ try {
             'line' => $e->getLine()
         ]
     ];
-    
+     
     // Log the error (optional)
     error_log("Form data fetch error: " . $e->getMessage());
 }
 
-// Ensure no whitespace or other output after JSON
+
 header('Content-Type: application/json');
 echo json_encode($response);
 exit;
