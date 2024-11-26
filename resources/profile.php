@@ -86,7 +86,7 @@ if (is_null($avg)) $avg = 0; // Handle case when there are no diagnoses
                                 </div>
                                 <div class="col-md-6">
                                     <label class="form-label">Email</label>
-                                    <input type="email" class="form-control" value="<?php echo htmlspecialchars($user['email']); ?>">
+                                    <input type="email" class="form-control" name="email" value="<?php echo htmlspecialchars($user['email']); ?>">
                                 </div>
                                 <div class="col-12">
                                     <button type="submit" class="btn btn-primary">Update Profile</button>
